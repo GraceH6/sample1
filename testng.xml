@@ -9,6 +9,7 @@
     <test name="Allure TestNG Tests">
         <classes>
             <class name="AllureTest" />
+            <class name="TestNgCucumberRunner"/>
         </classes>
     </test>
 

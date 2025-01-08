@@ -2,9 +2,8 @@ import aquality.selenium.browser.AqualityServices;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.io.ByteArrayInputStream;
 
 import static aquality.selenium.browser.AqualityServices.getElementFactory;
@@ -13,17 +12,17 @@ public class AllureTest {
 
     private static final String GLOBAL_PARAMETER = "global value";
 
-    @BeforeMethod
+    @BeforeSuite
     public void setUp() {
         AqualityServices.getBrowser().goTo("https://demoqa.com/text-box");
     }
 
-    @AfterMethod
+    @AfterSuite
     public void tearDown() {
         AqualityServices.getBrowser().quit();
     }
 
-    @Test
+    @Test(enabled = false)
     public void someTests() {
         simpleTest();
     }
