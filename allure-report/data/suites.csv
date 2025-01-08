@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Jan 05 04:49:50 QYZT 2025","Sun Jan 05 04:50:01 QYZT 2025","11025","Default Suite","allure-test","AllureTest","AllureTest","someTests","someTests",""
