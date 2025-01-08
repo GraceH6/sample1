@@ -7,7 +7,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import java.io.ByteArrayInputStream;
 
+import static aquality.selenium.browser.AqualityServices.getElementFactory;
+
 public class AllureTest {
+
     private static final String GLOBAL_PARAMETER = "global value";
 
     @BeforeMethod
@@ -25,14 +28,15 @@ public class AllureTest {
         simpleTest();
     }
 
-    @Step("Bla-Bla-Bla")
+    @Step("Auth step")
     public void simpleTest() {
         Allure.addAttachment("screenshot", "image/png",
                 new ByteArrayInputStream(AqualityServices.getBrowser().getScreenshot()), "png");
-        AqualityServices.getElementFactory().getTextBox(By.xpath("//input[@id='userName']"),
-                "username input").clearAndType("Zhansaya");
-        AqualityServices.getElementFactory().getTextBox(By.xpath("//input[@id='userEmail']"),
-                "email input").clearAndType("blabla@gmail.com");
+        var txbUserName = getElementFactory().getTextBox(By.xpath("//input[@id='userName']"), "username input");
+        var txbEmail = getElementFactory().getTextBox(By.xpath("//input[@id='userEmail']"), "email input");
+        txbUserName.getJsActions().scrollIntoView();
+        txbUserName.clearAndType("Zhansaya");
+        txbEmail.clearAndType("blabla@gmail.com");
         Allure.addAttachment("screenshot", new ByteArrayInputStream(AqualityServices.getBrowser().getScreenshot()));
     }
 

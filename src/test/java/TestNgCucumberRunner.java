@@ -3,8 +3,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "hellocucumber",
-        tags = "@third"
+        glue = "hellocucumber"
 )
 public class TestNgCucumberRunner extends AbstractTestNGCucumberTests {
 
