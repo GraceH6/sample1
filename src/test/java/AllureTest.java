@@ -22,7 +22,7 @@ public class AllureTest {
         AqualityServices.getBrowser().quit();
     }
 
-    @Test(enabled = false)
+    @Test
     public void someTests() {
         simpleTest();
     }
